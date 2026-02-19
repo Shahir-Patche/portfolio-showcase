@@ -1,0 +1,18 @@
+graph LR
+    subgraph OfflineMode ["Offline Mode"]
+        App[Mobile App]
+        Queue[Pending Queue]
+        Retry[Backoff Timer]
+    end
+
+    subgraph OnlineMode ["Online Mode"]
+        Cloud[Cloud API]
+        DB[Database]
+    end
+
+    App -- "Action (Save Scan)" --> Queue
+    Queue -- "Network Available?" --> Cloud
+    Cloud -- "4xx/5xx Error" --> Retry
+    Retry -- "Wait..." --> Queue
+    Cloud -- "200 OK" --> DB
+    DB -- "Ack" --> App

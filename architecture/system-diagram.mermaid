@@ -1,0 +1,28 @@
+graph TD
+    subgraph Client ["Client (Mobile / Edge)"]
+        MobileApp[React Native App]
+        LocalDB[(Async Storage)]
+        SyncMgr[DataSyncManager]
+    end
+
+    subgraph Cloud ["Cloud Infrastructure (AWS / Supabase)"]
+        EdgeFunc[Edge Functions (Deno)]
+        Auth[Auth Service]
+        Postgres[(PostgreSQL Historian)]
+        RLS[Row Level Security]
+    end
+
+    subgraph AI ["AI Services"]
+        Vision[Vision Model]
+    end
+
+    MobileApp -->|1. User Action| LocalDB
+    LocalDB -->|2. Queue| SyncMgr
+    SyncMgr -->|3. Secure Sync (HTTPS)| EdgeFunc
+    EdgeFunc -->|4. Validate Token| Auth
+    EdgeFunc -->|5. Audit Log| Postgres
+    EdgeFunc -->|6. Process Data| Vision
+    Vision -->|7. Analysis Result| EdgeFunc
+    EdgeFunc -->|8. Store Result| Postgres
+    Postgres --- RLS
+    RLS -.->|Enforce Tenant Isolation| Postgres
