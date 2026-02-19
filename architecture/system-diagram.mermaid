@@ -16,13 +16,13 @@ graph TD
         Vision[Vision Model]
     end
 
-    MobileApp -->|1. User Action| LocalDB
-    LocalDB -->|2. Queue| SyncMgr
-    SyncMgr -->|3. Secure Sync (HTTPS)| EdgeFunc
-    EdgeFunc -->|4. Validate Token| Auth
-    EdgeFunc -->|5. Audit Log| Postgres
-    EdgeFunc -->|6. Process Data| Vision
-    Vision -->|7. Analysis Result| EdgeFunc
-    EdgeFunc -->|8. Store Result| Postgres
+    MobileApp -->|"1. User Action"| LocalDB
+    LocalDB -->|"2. Queue"| SyncMgr
+    SyncMgr -->|"3. Secure Sync (HTTPS)"| EdgeFunc
+    EdgeFunc -->|"4. Validate Token"| Auth
+    EdgeFunc -->|"5. Audit Log"| Postgres
+    EdgeFunc -->|"6. Process Data"| Vision
+    Vision -->|"7. Analysis Result"| EdgeFunc
+    EdgeFunc -->|"8. Store Result"| Postgres
     Postgres --- RLS
-    RLS -.->|Enforce Tenant Isolation| Postgres
+    RLS -.->|"Enforce Tenant Isolation"| Postgres
