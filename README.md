@@ -56,9 +56,26 @@ The following diagram illustrates the high-level data flow from the edge device 
 
 ---
 
+### 4. Real-Time Industrial Dashboard (Frontend)
+
+*File: `frontend/dashboard/EnterpriseDashboard.tsx`*
+
+- **Challenge**: visualizing complex, multi-tenant industrial data for C-Suite executives and plant managers in real-time.
+- **Solution**: Built a **React/Tailwind** dashboard with **Recharts** for data visualization. Features a "Risk Radar" heatmap to instantly identify at-risk departments, and a "Live Pulse" feed (`frontend/components/ActivityPulse.tsx`) to show concurrent system activity.
+
+### 5. Polyglot System Integration
+
+*Files: `main.cpp`, `anomaly_detection.py`, `HistorianClient.cs`*
+
+- **Embedded (C++)**: Secure MQTT firmware for biometric sensors, demonstrating low-level hardware control and power management.
+- **Data Science (Python)**: Statistical backend service for detecting anomalies (Z-Score analysis) and triggering automated SCADA alarms.
+- **Enterprise (C#)**: .NET client for bridging modern cloud telemetry with legacy factory HMI systems.
+
+---
+
 ## 🛠 Tech Stack
 
-- **Languages**: TypeScript, SQL, Python
+- **Languages**: TypeScript, Python, C++, C#, SQL
 - **Cloud/Infra**: Supabase (PostgreSQL), AWS Lambda / Edge Functions
 - **Protocols**: REST, WebSocket, MQTT (pattern equivalents)
 - **CI/CD**: GitHub Actions
