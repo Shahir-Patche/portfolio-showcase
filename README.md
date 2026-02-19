@@ -17,6 +17,9 @@ This repository contains selected technical samples from my work at **Patche AI 
 | **[Edge Computing](./backend/edge-computing/mask-and-analyze.ts)** | TypeScript, Deno, WebAssembly | Simulates an IoT edge processing unit. Demonstrates **rate limiting**, **CORS security**, **input validation**, and **AI integration** for biometric telemetry. |
 | **[Database Security](./backend/database/security_policies.sql)** | PostgreSQL, SQL, RLS | Governance policies ensuring strict **multi-tenant isolation**. Includes a **"Break Glass" protocol** for emergency access, mirroring industrial compliance standards. |
 | **[Offline Sync Engine](./mobile-client/offline-sync/DataSyncManager.ts)** | TypeScript, React Native, Async Storage | A robust **store-and-forward** mechanism. Queues telemetry data when offline and synchronizes with exponential backoff reliability when connectivity is restored. |
+| **[IoT Firmware (C++)](./firmware/sensor_node/main.cpp)** | C++, Arduino, MQTT/TLS | Embedded code for a secure biometric sensor node. Handles **WiFi provisioning**, **SSL encryption**, and **power management (Deep Sleep)**. |
+| **[SCADA Tooling (C#)](./tools/scada_connector/HistorianClient.cs)** | C#, .NET, HTTP Client | A strongly-typed client for bridging cloud telemetry with legacy **Factory HMI** systems. |
+| **[AI Analytics (Python)](./backend/analytics/anomaly_detection.py)** | Python, Pandas, NumPy | Statistical analysis backend for detecting sensor anomalies (Z-Score) and triggering **SCADA alarms**. |
 | **[System Architecture](./architecture/system-diagram.mermaid)** | Mermaid.js | High-level diagram of the telemetry pipeline. |
 
 ## 🏗 System Architecture
