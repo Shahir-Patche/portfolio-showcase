@@ -14,6 +14,7 @@ This repository contains selected technical samples from my work at **Patche AI 
 
 | Component | technologies | Description |
 |-----------|--------------|-------------|
+| **[Enterprise Dashboard](./frontend/dashboard/EnterpriseDashboard.tsx)** | React, Recharts, Tailwind | **Real-time Analytics Dashboard** for Industrial clients. Features **Risk Radar**, anomaly visualization, and live activity feeds. |
 | **[Edge Computing](./backend/edge-computing/mask-and-analyze.ts)** | TypeScript, Deno, WebAssembly | Simulates an IoT edge processing unit. Demonstrates **rate limiting**, **CORS security**, **input validation**, and **AI integration** for biometric telemetry. |
 | **[Database Security](./backend/database/security_policies.sql)** | PostgreSQL, SQL, RLS | Governance policies ensuring strict **multi-tenant isolation**. Includes a **"Break Glass" protocol** for emergency access, mirroring industrial compliance standards. |
 | **[Offline Sync Engine](./mobile-client/offline-sync/DataSyncManager.ts)** | TypeScript, React Native, Async Storage | A robust **store-and-forward** mechanism. Queues telemetry data when offline and synchronizes with exponential backoff reliability when connectivity is restored. |
